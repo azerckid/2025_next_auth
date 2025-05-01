@@ -1,6 +1,14 @@
-import { PrismaClient } from '../../prisma/generated/prisma'
+import Box from '@/app/components/Box';
+import { PrismaClient } from '../../../prisma/generated/prisma'
 
 const prisma = new PrismaClient()
+
+const boxes = [
+    { title: 'Box 1', content: 'Content for box 1' },
+    { title: 'Box 2', content: 'Content for box 2' },
+    { title: 'Box 3', content: 'Content for box 3' },
+    { title: 'Box 4', content: 'Content for box 4' },
+];
 
 export default async function PostsPage() {
     const posts = await prisma.post.findMany({
@@ -19,6 +27,11 @@ export default async function PostsPage() {
 
     return (
         <div className="container mx-auto px-4 py-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                {boxes.map((box, index) => (
+                    <Box key={index} title={box.title} content={box.content} />
+                ))}
+            </div>
             <h1 className="text-3xl font-bold mb-8">게시글 목록</h1>
             <div className="grid gap-6">
                 {posts.map((post) => (

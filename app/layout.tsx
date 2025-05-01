@@ -25,9 +25,35 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50 dark:bg-gray-900`}
       >
-        {children}
+        <div className="min-h-screen">
+          {/* Header */}
+          <header className="bg-white dark:bg-gray-800 shadow-sm">
+            <nav className="container mx-auto px-4 py-4">
+              <div className="flex justify-between items-center">
+                <h1 className="text-xl font-bold">My App</h1>
+                {/* Add navigation items here if needed */}
+              </div>
+            </nav>
+          </header>
+
+          {/* Main Content */}
+          <main className="container mx-auto px-4 py-8">
+            <div className="max-w-[1280px] mx-auto">
+              {children}
+            </div>
+          </main>
+
+          {/* Footer */}
+          <footer className="bg-white dark:bg-gray-800 shadow-sm mt-auto">
+            <div className="container mx-auto px-4 py-6">
+              <p className="text-center text-gray-600 dark:text-gray-400">
+                © 2024 My App. All rights reserved.
+              </p>
+            </div>
+          </footer>
+        </div>
       </body>
     </html>
   );
