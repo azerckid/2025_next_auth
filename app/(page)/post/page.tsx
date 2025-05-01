@@ -1,7 +1,5 @@
 import Box from '@/app/components/Box';
-import { PrismaClient } from '../../../prisma/generated/prisma'
-
-const prisma = new PrismaClient()
+import { prisma } from '@/app/lib/prisma';
 
 const boxes = [
     { title: 'Box 1', content: 'Content for box 1' },
