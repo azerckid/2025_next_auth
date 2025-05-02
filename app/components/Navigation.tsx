@@ -11,10 +11,10 @@ export default function Navigation() {
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between gap-x-20">
+        <>
+            <div className="relative h-16 w-full flex items-center justify-between ">
                 {/* Logo */}
-                <div className="flex flex-1 items-center">
+                <div className="flex items-center">
                     <Link
                         href="/"
                         className="flex items-center text-lg font-semibold text-gray-900 dark:text-white"
@@ -25,7 +25,7 @@ export default function Navigation() {
                 </div>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex md:items-center md:space-x-8">
+                <div className="hidden md:flex md:gap-16 items-center space-x-8">
                     <Link
                         href="/"
                         className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
@@ -123,6 +123,6 @@ export default function Navigation() {
                     </Link>
                 </div>
             </div>
-        </nav>
+        </>
     );
 } 
